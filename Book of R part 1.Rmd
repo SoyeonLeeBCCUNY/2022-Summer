@@ -63,3 +63,43 @@ vout<-c(seq(from=6,to=12),
 length(vout)
 ```
 
+Exercise 2.4
+```{r}
+#(a)
+v1<-seq(from=3, to=6, length.out=5)
+v2<-rep(c(2,-5.1,-33),times=2)
+v3<-7/42+2
+(vout<-c(v1,v2,v3))
+#answer
+foo <- c(seq(from=3,to=6,length.out=5),rep(c(2,-5.1,-33),times=2),7/42+2)
+foo
+
+#(b)
+newvec<-vout[c(1,length(vout))]
+#(c)
+omitvec<-vout[-c(1,length(vout))]
+#(d)
+reconstrv<-c(newvec[1],omitvec,newvec[2]) #listed in orig order
+reconstrv<-c(newvec,omitvec) #listed newvec followed by omitvec
+#(e)
+ascend_v<-sort(reconstrv, decreasing=FALSE)
+#(f)
+ascend_v[length(ascend_v):1]
+sort(reconstrv, decreasing=TRUE)
+#(g)
+a<-rep(x=omitvec[3],times=3)
+b<-rep(x=omitvec[6],times=4)
+c<-omitvec[length(omitvec)]
+finv<-c(a,b,c)
+#alternative way 
+owrascend_v<-c(rep(x=omitvec[3],times=3),
+               rep(x=omitvec[6],times=4),
+               omitvec[length(omitvec)])
+#answer
+baz <- foo[-c(1,length(x=foo))]
+baz[c(rep(x=3,times=3),rep(x=6,times=4),length(x=baz))]
+
+#(h)
+ascend_v[c(1,5:7,length(ascend_v))]<-99:95
+```
+
