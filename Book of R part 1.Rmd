@@ -103,3 +103,33 @@ baz[c(rep(x=3,times=3),rep(x=6,times=4),length(x=baz))]
 ascend_v[c(1,5:7,length(ascend_v))]<-99:95
 ```
 
+Exercise 2.5
+```{r}
+#(a)
+vec_a<-c(2,0.5,1,2,0.5,1,2,0.5,1)
+vec_a[1:length(vec_a)] <- c(1,1,1)
+vec_a
+#suggested solution (use this)
+c(2,0.5,1,2,0.5,1,2,0.5,1)/c(2,0.5,1)
+
+#(b)
+fer_v<-c(45,77,20,19,101,120,212)
+cel<-(fer_v-32)*5/9
+
+#(c)
+vec1<-c(2,4,6)
+vec2<-c(1,2)
+vec3<-rep(x=vec2,each=3)
+vecout<-vec1*vec3  #vec1 length is 3 vec3 length is 6
+#suggested solution (use this)
+foo <- rep(x=c(2,4,6),times=2)*rep(x=c(1,2),each=3)
+foo
+
+#(d)
+vecout[2:5]<-rep(x=c(-0.1,-100),times=2)
+#solution
+foo[2:5] <- c(-0.1,-100) #lengths different but works
+foo
+
+```
+
