@@ -250,11 +250,73 @@ solve(A)%*%A-diag(4) #inverse times the original A equal to 1.
 ```
 
 
+Exercise 4.1
 ```{r}
+#(a)
+a<-c(6,9,7,3,6,7,9,6,3,6,6,7,1,9,1)
+a==6 #i
+a>=6 #ii
+a<(6+2) #iii
+a!=6 #iv
+
+#(b) involves array which I did not cover (last section of chap3)
+bar<-a[-(1:3)]
+bar <- array(data=bar,dim=c(2,2,3)) #suggested solution
+bar
+bar<=(6/2+4) 
+(bar+2)<=(6/2+4)
 
 #(c)
-A <- rbind(c(2,0,0,0),c(0,3,0,0),c(0,0,5,0),c(0,0,0,-1))
-solve(A)%*%A-diag(4)
+d<-diag(x=10)
+d==0
+#suggested solution
+diag(10)==0
 
+#(d) involving the 3d array in #b (use suggested solution for #b)
+any(bar<=(6/2+4))
+all(bar<=(6/2+4))
+any((bar+2)<=(6/2+4))
+all((bar+2)<=(6/2+4))
+
+#(e) not sure about what the question is asking
+any(diag(diag(10)==0))
 ```
+
+
+Exercise 4.2
+```{r}
+#(a)
+foo<-c(7,1,7,10,5,9,10,3,10,8)
+foo_out<-(foo>5 | foo==2)
+#(b)
+bar<-c(8,8,4,4,5,1,5,6,6,8)
+bar_out<-(bar<=6 & bar!=4)
+#(c)
+foo_out
+bar_out
+foo_out & bar_out
+foo_bar<-foo_out & bar_out
+#(d)
+baz<-foo + bar
+baz>=14 & baz!=15 ##i
+baz_out <- baz>=14 & baz!=15 ##i store
+baz/foo >4 | baz/foo<=2 ##ii
+bazfoo_out<-baz/foo >4 | baz/foo<=2 ##ii store
+#(e)
+foofoo_out<- (foo>5) || (foo==2) ##a result long version
+  foo_out[1]==foofoo_out ##a verify
+barbar_out<- (bar<=6) && (bar!=4) ##b result long version
+  bar_out[1]==barbar_out ##b verify
+foo_out && bar_out ##c result long version
+  foo_bar[1]==(foo_out && bar_out) ## c verify
+#solution for c confirmation (used long version in all logical operators)
+((foo>5)||(foo==2))&&((bar<=6)&&(bar!=4))
+  
+baz>=14 && baz!=15 ##d-i
+  baz_out[1]==(baz>=14 && baz!=15) ##d-i verify
+baz/foo >4 || baz/foo<=2 ##d-ii
+  bazfoo_out[1]==(baz/foo >4 || baz/foo<=2) ##d-ii verify
+```
+
+
 
